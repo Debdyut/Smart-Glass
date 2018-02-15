@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -66,7 +67,93 @@ public class CustomProcess extends AppCompatActivity {
         {
             try
             {
-                btSocket.getOutputStream().write("OK".toString().getBytes());
+                EditText editText = (EditText) findViewById(R.id.editText);
+                String value = editText.getText().toString();
+                btSocket.getOutputStream().write(value.getBytes());
+            }
+            catch (IOException e)
+            {
+                msg("Error");
+            }
+        }
+    }
+
+    public void getRecipe(View view) {
+        if (btSocket!=null)
+        {
+            try
+            {
+                btSocket.getOutputStream().write("Recipie for soup".toString().getBytes());
+            }
+            catch (IOException e)
+            {
+                msg("Error");
+            }
+        }
+    }
+
+    public void getMsg(View view) {
+        if (btSocket!=null)
+        {
+            try
+            {
+                btSocket.getOutputStream().write("Debashis Das: Hi".toString().getBytes());
+            }
+            catch (IOException e)
+            {
+                msg("Error");
+            }
+        }
+    }
+
+    public void getLocation(View view) {
+        if (btSocket!=null)
+        {
+            try
+            {
+                btSocket.getOutputStream().write("BPPIMT, VIP Road".toString().getBytes());
+            }
+            catch (IOException e)
+            {
+                msg("Error");
+            }
+        }
+    }
+
+    public void getHotels(View view) {
+        if (btSocket!=null)
+        {
+            try
+            {
+                btSocket.getOutputStream().write("Dominos; Subway, CCD".toString().getBytes());
+            }
+            catch (IOException e)
+            {
+                msg("Error");
+            }
+        }
+    }
+
+    public void getCalls(View view) {
+        if (btSocket!=null)
+        {
+            try
+            {
+                btSocket.getOutputStream().write("Gopal Calling ...".toString().getBytes());
+            }
+            catch (IOException e)
+            {
+                msg("Error");
+            }
+        }
+    }
+
+    public void getReadings(View view) {
+        if (btSocket!=null)
+        {
+            try
+            {
+                btSocket.getOutputStream().write("13.3V".toString().getBytes());
             }
             catch (IOException e)
             {
